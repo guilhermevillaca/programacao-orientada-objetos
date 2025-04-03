@@ -172,11 +172,15 @@ public class ExerciciosIntroducao {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Digite um número para fatorial: ");
         int f = scanner.nextInt(), fat = 1;
-        for (int i = 1; i <= f; i++)
-            fat *= i;
+        for (int i = 1; i <= f; i++){
+            fat = fat * i;
+        }
+            
         System.out.println("Fatorial: " + fat);
     }
-
+/*
+ * 
+ */
     public static void exercicio10() {
         Scanner scanner = new Scanner(System.in);
         double soma = 0;
