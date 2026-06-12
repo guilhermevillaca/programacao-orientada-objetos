@@ -89,43 +89,28 @@ public class Editar {
 
                 rs.close();
                 sql.close();
-
                 sql = con.prepareStatement(
                         "UPDATE pessoa "
                         + "SET nome = ?, email = ?, cpf = ? "
                         + "WHERE id = ?"
                 );
-
                 sql.setString(1, nome);
                 sql.setString(2, email);
                 sql.setString(3, cpf);
                 sql.setInt(4, id);
-
-                int linhasAfetadas =
-                        sql.executeUpdate();
+                int linhasAfetadas = sql.executeUpdate();
 
                 if (linhasAfetadas > 0) {
-
                     System.out.println();
-                    System.out.println(
-                            "Pessoa atualizada com sucesso."
-                    );
-
+                    System.out.println("Pessoa atualizada com sucesso.");
                 }
-
             } else {
-
                 System.out.println();
-                System.out.println(
-                        "Pessoa não encontrada."
-                );
-
+                System.out.println("Pessoa não encontrada.");
             }
 
         } catch (Exception e) {
-
             System.out.println(e);
-
         } finally {
 
             try {
@@ -145,9 +130,6 @@ public class Editar {
             } catch (Exception e) {
 
             }
-
         }
-
     }
-
 }

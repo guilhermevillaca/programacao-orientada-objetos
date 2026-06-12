@@ -31,8 +31,13 @@ public class Exibir {
             int id = scanner.nextInt();
             rs.close();
             sql.close();
-            sql = con.prepareStatement("SELECT * FROM pessoa WHERE id = ?");
+            sql = con.prepareStatement("SELECT * FROM pessoa WHERE id = ? " + id);
             sql.setInt(1, id);
+            
+            //guilherme
+            //123 or true
+            //select * from usuario
+            //where login = 'guilherme' and senha = '123' or 1 = 1
 
             rs = sql.executeQuery();
             if (rs.next()) {

@@ -49,21 +49,15 @@ public class Excluir {
             sql = con.prepareStatement(
                     "DELETE FROM pessoa WHERE id = ?"
             );
-
             sql.setInt(1, id);
-
             int linhasAfetadas = sql.executeUpdate();
 
             if (linhasAfetadas > 0) {
-
                 System.out.println();
                 System.out.println("Pessoa excluída com sucesso.");
-
             } else {
-
                 System.out.println();
                 System.out.println("Pessoa não encontrada.");
-
             }
 
         } catch (Exception e) {
