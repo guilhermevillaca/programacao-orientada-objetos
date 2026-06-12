@@ -25,6 +25,8 @@ public class Principal {
                     + "\n 0 para sair"
                     + "\n 1 para inserir "
                     + "\n 2 para Exibir os dados "
+                    + "\n 3 para excluir "
+                    + "\n 4 para editar "
                     + "\n"
                     + "=====");
             System.out.println();
@@ -32,15 +34,27 @@ public class Principal {
             opcao = scanner.nextInt();
             scanner.nextLine();
 
-            if (opcao == 1) {
-                Inserir.executar();
-            } else if (opcao == 2) {
-                Exibir.executar();
-            } else if (opcao == 0) {
-                System.out.println("Encerrando o sistema...");
-            } else {
-                System.out.println("Opção inválida.");
+            switch (opcao) {
+                case 0:
+                    System.out.println("Encerrando o sistema...");
+                    break;
+                case 1:
+                    Inserir.executar();
+                    break;
+                case 2:
+                    Exibir.executar();
+                    break;
+                case 3:
+                    Excluir.executar();
+                    break;
+                case 4:
+                    Editar.executar();
+                    break;
+                default:
+                    System.out.println("Opção Inválida");
+                    break;
             }
+
         }
 
     }
